@@ -89,3 +89,12 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+
+#goblin-list{
+   display: flex; 
+}
+
+.goblins{
+    box-shadow: var(--shadow);
+    margin: 10px;
+}
