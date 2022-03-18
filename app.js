@@ -1,4 +1,4 @@
-// import functions and grab DOM elements
+
 
 import { renderGoblins } from './render-utils.js';
 
@@ -7,7 +7,6 @@ const goblinList = document.querySelector('#goblin-list');
 const playerHPEl = document.querySelector('#player-hp');
 const goblinsDefeatedEl = document.querySelector('#goblins-defeated');
 
-// let state
 
 let playerHP = 10;
 let goblinsDefeated = 0;
@@ -84,11 +83,3 @@ function displayGoblins(){
     
 
 }
-
-
-
-
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
