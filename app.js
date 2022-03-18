@@ -11,9 +11,11 @@ const goblinsDefeatedEl = document.querySelector('#goblins-defeated');
 let playerHP = 10;
 let goblinsDefeated = 0;
 
+const georgeImageId = Math.floor(Math.random() * 4);
+const jaredImageId = Math.floor(Math.random() * 4);
+const beauImageId = Math.floor(Math.random() * 4);
 
-
-const goblins = [{ name: 'George', hp: 2 }, { name: 'Jared', hp: 5 }, { name: 'Beau', hp: 5 }
+const goblins = [{ name: 'George', hp: 2, image_id:georgeImageId }, { name: 'Jared', hp: 5, image_id:jaredImageId }, { name: 'Beau', hp: 5, image_id: beauImageId }
 
 ];
 displayGoblins();
@@ -26,7 +28,8 @@ formEl.addEventListener('submit', (e) => {
     const newGoblin = {
 
         name: data.get('form-name'),
-        hp: 3,
+        hp: 3, 
+        image_id: Math.floor(Math.random() * 4),
 
     };
 
@@ -81,6 +84,7 @@ function displayGoblins(){
                 displayGoblins();
             
             });
+
         }
 
         goblinList.append(goblinEl);
