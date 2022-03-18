@@ -47,11 +47,11 @@ function displayGoblins(){
     for (let goblin of goblins) {
         const goblinEl = renderGoblins(goblin);
 
+        if (goblin.hp > 0){
+            goblinEl.addEventListener('click', () => {
 
-        goblinEl.addEventListener('click', () => {
 
-
-            if (goblin.hp > 0){
+            
                 if (Math.random() < 0.5){
                     goblin.hp--;
                     alert(goblin.name + ' got hit');
@@ -77,11 +77,11 @@ function displayGoblins(){
                     alert('Game Over');
                 }
               
-            }
-            displayGoblins();
             
-        });
-    
+                displayGoblins();
+            
+            });
+        }
 
         goblinList.append(goblinEl);
     }
