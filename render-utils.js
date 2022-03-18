@@ -44,6 +44,7 @@ function randomPix(){
     const goblinPix = new Array('./assets/goblin1.png', './assets/goblin2.png', './assets/goblin3.png', './assets/goblin4.png');
     const randomNum = Math.floor(Math.random() * goblinPix.length);
 
+
     return goblinPix[randomNum];
 }
 

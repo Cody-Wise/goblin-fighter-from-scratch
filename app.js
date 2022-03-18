@@ -71,7 +71,13 @@ function displayGoblins(){
                     goblinsDefeatedEl.textContent = `You have Vanquished ${goblinsDefeated} Goblins`;
 
                     
-                }}
+                }
+              
+                if (playerHP === 0){
+                    alert('Game Over');
+                }
+              
+            }
             displayGoblins();
             
         });
