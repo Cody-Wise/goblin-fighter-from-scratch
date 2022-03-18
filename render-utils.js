@@ -3,6 +3,9 @@ export function renderGoblins(goblin){
     const goblinsEl = document.createElement('div');
     const goblinsName = document.createElement('p');
     const goblinsHP = document.createElement('p');
+    const goblinsImg = document.createElement('img');
+
+    goblinsImg.classList.add('goblin-img');
   
     goblinsEl.classList.add('goblins');
 
@@ -24,10 +27,23 @@ export function renderGoblins(goblin){
     }
 
     goblinsName.textContent = goblin.name;
+    goblinsImg.src = randomPix();
     goblinsHP.textContent = `${goblin.hp} ${goblinEmoji}`;
+    
 
-    goblinsEl.append(goblinsName, goblinsHP);
+    goblinsEl.append(goblinsName, goblinsImg, goblinsHP);
 
     return goblinsEl;
 
 }
+
+
+
+function randomPix(){
+
+    const goblinPix = new Array('./assets/goblin1.png', './assets/goblin2.png', './assets/goblin3.png', './assets/goblin4.png');
+    const randomNum = Math.floor(Math.random() * goblinPix.length);
+
+    return goblinPix[randomNum];
+}
+
