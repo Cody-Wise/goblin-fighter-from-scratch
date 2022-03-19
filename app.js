@@ -8,7 +8,7 @@ const playerHPEl = document.querySelector('#player-hp');
 const goblinsDefeatedEl = document.querySelector('#goblins-defeated');
 
 
-let playerHP = 10;
+let playerHP = 1;
 let goblinsDefeated = 0;
 
 const georgeImageId = Math.floor(Math.random() * 4);
@@ -20,36 +20,38 @@ const goblins = [{ name: 'George', hp: 2, image_id:georgeImageId }, { name: 'Jar
 ];
 displayGoblins();
 
-if (playerHP > 0){
 
-    formEl.addEventListener('submit', (e) => {
 
-        e.preventDefault();
+formEl.addEventListener('submit', (e) => {
+    
+    e.preventDefault();
 
-        const data = new FormData(formEl);
+    const data = new FormData(formEl);
 
-        const newGoblin = {
+    const newGoblin = {
 
-            name: data.get('form-name'),
-            hp: 3, 
-            image_id: Math.floor(Math.random() * 4),
+        name: data.get('form-name'),
+        hp: 3, 
+        image_id: Math.floor(Math.random() * 4),
 
-        };
-
+    };
+    if (playerHP > 0){
         goblins.unshift(newGoblin);
 
         displayGoblins();
 
         formEl.reset();
-  
-    });
-}
+    } else {
+        alert('You are dead Stop Clicking');
+    }
+});
+
 
 function displayGoblins(){
 
     goblinList.textContent = '';
 
-    
+    playerHPEl.textContent = `Player HP is ${playerHP}`;
 
     for (let goblin of goblins) {
         const goblinEl = renderGoblins(goblin);
