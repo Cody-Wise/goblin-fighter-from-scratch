@@ -19,27 +19,31 @@ const goblins = [{ name: 'George', hp: 2, image_id:georgeImageId }, { name: 'Jar
 
 ];
 displayGoblins();
-formEl.addEventListener('submit', (e) => {
 
-    e.preventDefault();
+if (playerHP > 0){
 
-    const data = new FormData(formEl);
+    formEl.addEventListener('submit', (e) => {
 
-    const newGoblin = {
+        e.preventDefault();
 
-        name: data.get('form-name'),
-        hp: 3, 
-        image_id: Math.floor(Math.random() * 4),
+        const data = new FormData(formEl);
 
-    };
+        const newGoblin = {
 
-    goblins.unshift(newGoblin);
+            name: data.get('form-name'),
+            hp: 3, 
+            image_id: Math.floor(Math.random() * 4),
 
-    displayGoblins();
+        };
 
-    formEl.reset();
+        goblins.unshift(newGoblin);
+
+        displayGoblins();
+
+        formEl.reset();
   
-});
+    });
+}
 
 function displayGoblins(){
 
@@ -50,7 +54,7 @@ function displayGoblins(){
     for (let goblin of goblins) {
         const goblinEl = renderGoblins(goblin);
 
-        if (goblin.hp > 0){
+        if (goblin.hp && playerHP > 0){
             goblinEl.addEventListener('click', () => {
 
 
