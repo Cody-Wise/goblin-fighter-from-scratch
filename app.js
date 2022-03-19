@@ -8,7 +8,7 @@ const playerHPEl = document.querySelector('#player-hp');
 const goblinsDefeatedEl = document.querySelector('#goblins-defeated');
 
 
-let playerHP = 1;
+let playerHP = 10;
 let goblinsDefeated = 0;
 
 const georgeImageId = Math.floor(Math.random() * 4);
